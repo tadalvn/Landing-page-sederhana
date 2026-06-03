@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Quicksand", sans-serif;
   margin: 0;
@@ -126,33 +130,97 @@ main article {
   margin-top: 2rem;
 }
 
-main aside {
+.company-aside {
   margin-top: 2rem;
-}
-
-main aside .social-media ul {
   padding: 1.5rem;
   border-radius: 12px;
-  margin: 0;
   background-color: #f8f8f8;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
 }
 
-main aside .social-media li {
+.company-profile {
+  text-align: center;
+}
+
+.aside-logo {
+  width: min(140px, 60%);
+  margin-bottom: 1rem;
+}
+
+.company-profile h2,
+.company-info h3 {
+  margin: 0;
+  color: #373737;
+}
+
+.company-summary {
+  max-width: 620px;
+  margin: 0.75rem auto 1.5rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.company-info h3 {
+  margin-bottom: 1rem;
+}
+
+.company-info table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
+  text-align: left;
+}
+
+.company-info tr + tr {
+  border-top: 1px solid #eeeeee;
+}
+
+.company-info th,
+.company-info td {
+  padding: 1rem;
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+.company-info th {
+  width: 160px;
+  color: #373737;
+}
+
+.company-info td {
+  color: #555;
+  overflow-wrap: anywhere;
+}
+
+.social-media ul {
+  padding: 1.5rem 0 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-media li {
   list-style-type: none;
 }
 
-main aside .social-media li a {
+.social-media a {
   text-decoration: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: white;
+  display: grid;
+  place-items: center;
   font-size: 1.5rem;
   color: #373737;
   transition: all 0.2s ease-in-out;
 }
-main aside .social-media li a:hover {
+
+.social-media a:hover {
+  background-color: #eeeeee;
   color: #808080;
 }
 .card {
@@ -245,7 +313,6 @@ footer {
   margin-bottom: 1rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   main .content {
     flex-direction: column-reverse;
@@ -301,5 +368,58 @@ footer {
 
   main .content .content-description p {
     font-size: 1rem;
+  }
+
+  .company-aside {
+    padding: 1rem;
+  }
+
+  .aside-logo {
+    width: min(110px, 45%);
+  }
+
+  .company-profile h2 {
+    font-size: 1.4rem;
+  }
+
+  .company-summary {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .company-info h3 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .company-info :is(table, tbody, tr, th, td) {
+    display: block;
+    width: 100%;
+  }
+
+  .company-info tr {
+    padding: 0.9rem 1rem;
+  }
+
+  .company-info th,
+  .company-info td {
+    padding: 0;
+  }
+
+  .company-info th {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .social-media ul {
+    padding-top: 1rem;
+    gap: 0.75rem;
+  }
+
+  .social-media a {
+    width: 2.45rem;
+    height: 2.45rem;
+    font-size: 1.25rem;
   }
 }
